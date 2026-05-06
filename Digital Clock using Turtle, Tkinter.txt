@@ -1,0 +1,33 @@
+			Digital Clock using Turtle, Tkinter, Function
+
+import tkinter as tk
+import turtle
+import time
+from tkinter import messagebox
+
+# Function to update time
+def update_time():
+    current_time = time.strftime('%H:%M:%S')
+    turtle.clear()
+    turtle.write(current_time, align="center", font=("Arial", 50, "normal"))
+    turtle.ontimer(update_time, 1000)
+
+# Function to show message box
+def show_message():
+    messagebox.showinfo("Welcome", "Digital Clock is now running!")
+
+# Turtle setup
+turtle.setup(400, 200)
+turtle.bgcolor("black")
+turtle.color("white")
+turtle.speed(0)
+turtle.hideturtle()
+
+# Show welcome message
+show_message()
+
+# Start clock
+update_time()
+
+# Keep window open
+turtle.done()
